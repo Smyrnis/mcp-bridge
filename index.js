@@ -713,6 +713,7 @@ function sanitizeRedirectHeaders(headers, fromUrl, toUrl) {
   delete sanitized.authorization;
   delete sanitized.cookie;
   delete sanitized["proxy-authorization"];
+  delete sanitized["x-api-key"];
   return sanitized;
 }
 
@@ -2210,5 +2211,8 @@ export {
   OAuthAuthorizationError,
   OAuthFlowCoordinator,
   completeOAuthAuthorization,
-  createOAuthCallbackWaiter
+  createOAuthCallbackWaiter,
+  fetchWithNodeHttp,
+  isSameOrigin,
+  sanitizeRedirectHeaders
 };
